@@ -1,5 +1,7 @@
 # ChipsInputLayout
 
+![Demo](https://github.com/filippella/ChipsInputLayout/blob/master/demo.gif)
+
 ```kotlin
 class MainActivity : AppCompatActivity() {
 
