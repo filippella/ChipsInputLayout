@@ -64,6 +64,10 @@ class MainActivity : AppCompatActivity() {
 
         chipsInputLayout.setChipsAdapter(object : BaseChipsInputAdapter<MyChipInput>() {
 
+            override fun getChipInputRemoverView(chipView: View?): View {
+                return chipView!!.findViewById(R.id.button_close_tag)
+            }
+
             override fun bindChipView(chipView: View?, chipInput: MyChipInput?) {
                 val tagTextView = chipView?.findViewById(R.id.text_tag) as TextView
                 tagTextView.text = chipInput.toString()

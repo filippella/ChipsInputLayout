@@ -192,23 +192,23 @@ public class ChipsInputLayout extends ViewGroup {
 
         int chipPosition = getChildCount() - 1;
 
-        View chipView = mChipsInputAdapter.onCreateChipView(mLayoutInflater, this);
-        mChipsInputAdapter.onBindChipView(chipView, chipInput);
+        View parentChipView = mChipsInputAdapter.onCreateChipView(mLayoutInflater, this);
+        mChipsInputAdapter.onBindChipView(parentChipView, chipInput);
 
-        View removeChipView = mChipsInputAdapter.getChipInputRemoverView(chipView);
+        View removeChipView = mChipsInputAdapter.getChipInputRemoverView(parentChipView);
         if (removeChipView != null) {
-            removeChipView.setOnClickListener(new AbstractOnclickListener<View>(chipView) {
+            removeChipView.setOnClickListener(new AbstractOnclickListener<View>(parentChipView) {
                 @Override
                 protected void onClick(View parentView, View childView) {
-                    int indexOfChild = indexOfChild(childView);
-                    removeView(childView);
+                    int indexOfChild = indexOfChild(parentView);
+                    removeView(parentView);
                     mPinnedChipsList.remove(indexOfChild);
                     handleHint();
                 }
             });
         }
 
-        addView(chipView, chipPosition);
+        addView(parentChipView, chipPosition);
         mPinnedChipsList.add(chipInput);
         handleHint();
     }
