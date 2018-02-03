@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         chipsInputLayout.setChipsAdapter(object : BaseChipsInputAdapter<MyChipInput>() {
 
             override fun getChipInputRemoverView(chipView: View?): View {
-                return chipView!!.findViewById(R.id.button_close_tag)
+                return chipView!!.findViewById(R.id.button_close_tag) // Optional Child View to close chip or null to remove action
             }
 
             override fun bindChipView(chipView: View?, chipInput: MyChipInput?) {
