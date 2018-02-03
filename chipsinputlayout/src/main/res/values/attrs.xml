@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ChipsInputLayout">
+        <attr name="cil_max_chip_count" format="integer" />
+        <attr name="cil_input_text_hint" format="reference|string" />
+        <attr name="cil_input_text_color" format="reference|color" />
+    </declare-styleable>
+</resources>
