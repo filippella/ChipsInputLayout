@@ -34,13 +34,12 @@ import org.dalol.chipsinputlayout.holders.ChipsInputViewHolder
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var chipsInputLayout : ChipsInputLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        chipsInputLayout = findViewById(R.id.chips_input_layout)
 
+        val chipsInputLayout = findViewById<ChipsInputLayout>(R.id.chips_input_layout)
 
         val chipInputs = mutableListOf<MyChipInput>()
         chipInputs.add(MyChipInput("Apple"))
